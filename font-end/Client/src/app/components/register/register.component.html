@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="login-form">
+      <h3>Bienvenido</h3>
+      <form (ngSubmit)="onSubmit()" [formGroup]="empresaForm">
+        <div class="input-group">
+          <label for="codigo">Código De Usuario:</label>
+          <input type="text" id="codigo" name="codigo" formControlName="codigo" required>
+          <!--<div *ngIf="loginForm.get('codigo').invalid && (loginForm.get('codigo').dirty || loginForm.get('codigo').touched)" class="error">
+            Código de usuario es requerido
+          </div>-->
+        </div>
+        <button type="submit" [disabled]="empresaForm.invalid" >Iniciar sesión</button>
+      </form>
+    </div>
+  </div>

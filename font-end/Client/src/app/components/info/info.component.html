@@ -1,0 +1,28 @@
+
+<div *ngIf="informacion">
+    <h2>Información del Usuario</h2>
+    <p><strong>Código:</strong> {{ informacion.codigo }}</p>
+    <p><strong>Nombre:</strong> {{ informacion.nombre }}</p>
+    <p><strong>Área:</strong> {{ informacion.area }}</p>
+    <p><strong>Horario:</strong></p>
+    <ul>
+      <li *ngFor="let horario of informacion.horario">
+        {{ horario.tipo }} - {{ horario.dia }} | Entradas:
+        <ul>
+          <li *ngFor="let entrada of horario.entrada">{{ entrada }}</li>
+        </ul>
+        Salidas:
+        <ul>
+          <li *ngFor="let salida of horario.salida">{{ salida }}</li>
+        </ul>
+      </li>
+    </ul>
+    <button (click)="regresar()">Registrar salida</button>
+  </div>
+  <div *ngIf="!informacion">
+    <p>No se encontró información para el usuario.</p>
+  </div>
+  
+  
+  
+  
